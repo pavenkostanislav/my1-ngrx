@@ -1,10 +1,10 @@
 <button (click)="increase()">increase</button>
-<button (click)="decrease()">decrease</button>
-<button (click)="clear()">clear</button>
+<button (click)="decrease()" [disabled]="disabledDecreases$ | async">decrease</button>
+<button (click)="clear()" [disabled]="disabledDecreases$ | async">clear</button>
 <div>
   <span>
     Counter is: {{ count$ | async }}; Update at:
-    {{ updatedAt$ | async | date: "DD.MM.YYYY hh:mm:ss" }}
+    {{ updatedAt$ | async | date: "dd.MM.yyyy hh:mm:ss" }}
   </span>
 </div>
 <router-outlet></router-outlet>
